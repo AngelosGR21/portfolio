@@ -17,7 +17,7 @@ const sideBarStyles = makeStyles((theme) => ({
     width: "100%",
     height: "20%",
     marginBottom: "10px",
-    backgroundColor: "#3d3d3d",
+    backgroundColor: colors.grey,
     borderRadius: "12px",
     display: "flex",
     alignItems: "center",

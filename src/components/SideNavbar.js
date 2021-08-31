@@ -1,17 +1,17 @@
 import { motion } from "framer-motion";
 import { Box, SvgIcon, Typography } from "@material-ui/core";
-import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
-import MenuBookIcon from "@material-ui/icons/MenuBook";
+import CodeIcon from "@material-ui/icons/Code";
 import EmailIcon from "@material-ui/icons/Email";
 import HomeIcon from "@material-ui/icons/Home";
 
+import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 //styles
 import sideBarStyles from "../styles/sideBarStyles";
 const SideNavbar = () => {
   const classes = sideBarStyles();
   return (
     <>
-      <Box className={classes.sideBarContainer}>
+      <Box className={classes.sideBarContainer} component="section">
         <Box
           className={classes.sideBarItem}
           component={motion.div}
@@ -29,17 +29,17 @@ const SideNavbar = () => {
         >
           <Typography className={classes.sideBarNames}>About</Typography>
           <SvgIcon classes={{ root: classes.sideBarIcons }}>
-            <InfoOutlinedIcon className={classes.sidebarIcons} />
+            <AccountCircleIcon />
           </SvgIcon>
         </Box>
         <Box
           className={classes.sideBarItem}
           component={motion.div}
-          whileHover={{ x: 80 }}
+          whileHover={{ x: 70 }}
         >
-          <Typography className={classes.sideBarNames}>Portofolio</Typography>
+          <Typography className={classes.sideBarNames}>Projects</Typography>
           <SvgIcon classes={{ root: classes.sideBarIcons }}>
-            <MenuBookIcon className={classes.sidebarIcons} />
+            <CodeIcon />
           </SvgIcon>
         </Box>
         <Box
@@ -49,7 +49,7 @@ const SideNavbar = () => {
         >
           <Typography className={classes.sideBarNames}>Contact Me</Typography>
           <SvgIcon classes={{ root: classes.sideBarIcons }}>
-            <EmailIcon className={classes.sidebarIcons} />
+            <EmailIcon />
           </SvgIcon>
         </Box>
       </Box>
