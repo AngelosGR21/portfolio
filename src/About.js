@@ -28,14 +28,13 @@ const About = () => {
   return (
     <>
       <SideNavbar />
-      <Container
-        className={classes.aboutContainer}
-        maxWidth="lg"
-        component={motion.main}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
-        <Box className={classes.aboutParagraphContainer} component="section">
+      <Container className={classes.aboutContainer} maxWidth="lg">
+        <Box
+          className={classes.aboutParagraphContainer}
+          component={motion.section}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
           <Typography variant="body1" className={classes.aboutParagraph}>
             Hi, my name is Angelos Grigoriu and i'm a self-taught Front-End Web
             Developer currently located in Derby (East Midlands). I'm passionate
@@ -43,7 +42,12 @@ const About = () => {
             learning about new technologies.
           </Typography>
         </Box>
-        <Box className={classes.skills} component="section">
+        <Box
+          className={classes.skills}
+          component={motion.section}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.5 }}
+        >
           <Typography variant="h4" className={classes.skillsHeader}>
             My skills
           </Typography>
@@ -70,7 +74,12 @@ const About = () => {
             </Box>
           </Container>
         </Box>
-        <Box className={classes.githubLinkedInContainer} component="section">
+        <Box
+          className={classes.githubLinkedInContainer}
+          component={motion.section}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1 }}
+        >
           <Typography className={classes.githubLinkedInParagraph}>
             You can also have a look at my Github/LinkedIn profile or resume by
             clicking on the icons below

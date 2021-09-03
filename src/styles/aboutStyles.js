@@ -12,7 +12,6 @@ const iconFontSize = {
 const aboutStyles = makeStyles((theme) => ({
   //Main container
   aboutContainer: {
-    opacity: "0",
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-evenly",
@@ -31,6 +30,7 @@ const aboutStyles = makeStyles((theme) => ({
 
   //About text container
   aboutParagraphContainer: {
+    opacity: "0",
     margin: "1rem 0",
     width: "100%",
     color: colors.white,
@@ -64,6 +64,7 @@ const aboutStyles = makeStyles((theme) => ({
 
   //skills container
   skills: {
+    opacity: "0",
     marginTop: "0.8rem",
     display: "flex",
     flexDirection: "column",
@@ -212,6 +213,7 @@ const aboutStyles = makeStyles((theme) => ({
   githubLinkedInContainer: {
     color: colors.white,
     textAlign: "center",
+    opacity: "0",
   },
   githubLinkedInParagraph: {
     fontSize: "0.9rem",
