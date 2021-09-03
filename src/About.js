@@ -6,10 +6,20 @@ import globalStyles from "./styles/globalStyles";
 import aboutStyles from "./styles/aboutStyles";
 
 //Material ui imports
-import { Icon, Container, Box, Typography, Link } from "@material-ui/core";
+import {
+  Icon,
+  Container,
+  Box,
+  Typography,
+  Link,
+  colors,
+} from "@material-ui/core";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import DescriptionIcon from "@material-ui/icons/Description";
+
+//import motion
+import { motion } from "framer-motion";
 
 const About = () => {
   globalStyles();
@@ -18,7 +28,13 @@ const About = () => {
   return (
     <>
       <SideNavbar />
-      <Container className={classes.aboutContainer} maxWidth="sm">
+      <Container
+        className={classes.aboutContainer}
+        maxWidth="lg"
+        component={motion.main}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
         <Box className={classes.aboutParagraphContainer} component="section">
           <Typography variant="body1" className={classes.aboutParagraph}>
             Hi, my name is Angelos Grigoriu and i'm a self-taught Front-End Web
@@ -56,8 +72,9 @@ const About = () => {
         </Box>
         <Box className={classes.githubLinkedInContainer} component="section">
           <Typography className={classes.githubLinkedInParagraph}>
-            You can also have a look at my Github/LinkedIn profile or resume
-            below
+            You can also have a look at my Github/LinkedIn profile or resume by
+            clicking on the icons below
+            <span className={classes.arrowSymbol}>&darr;</span>
           </Typography>
           <Box className={classes.iconsContainer}>
             <Link
@@ -74,7 +91,7 @@ const About = () => {
             >
               <LinkedInIcon className={classes.linkedIn} />
             </Link>
-            <Link>
+            <Link href="*" target="_blank" rel="noopener noreferrer">
               <DescriptionIcon className={classes.resume}></DescriptionIcon>
             </Link>
           </Box>
