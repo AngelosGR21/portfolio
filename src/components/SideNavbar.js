@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import { motion } from "framer-motion";
 import { Box, SvgIcon, Typography, AppBar } from "@material-ui/core";
@@ -67,8 +68,8 @@ const SideNavbar = () => {
     },
     clicked: {
       display: "flex",
-      clipPath: "circle(1000px at 5% -10px)",
-      webkitClipPath: "circle(1000px at 5% -10px)",
+      clipPath: "circle(1200px at 5% -10px)",
+      webkitClipPath: "circle(1200px at 5% -10px)",
       transition: {
         duration: 1,
       },
@@ -116,32 +117,32 @@ const SideNavbar = () => {
           variants={modalVariant}
           animate={showMenu ? "clicked" : "initial"}
         >
-          <Box className={classes.menuItemsContainer}>
+          <Link to="/" className={classes.menuItemsContainer}>
             <Typography className={classes.menuItemHeader}>Home</Typography>
             <SvgIcon classes={{ root: classes.sideBarIcons }}>
               <HomeIcon />
             </SvgIcon>
-          </Box>
-          <Box className={classes.menuItemsContainer}>
+          </Link>
+          <Link to="/about" className={classes.menuItemsContainer}>
             <Typography className={classes.menuItemHeader}>About</Typography>
             <SvgIcon classes={{ root: classes.sideBarIcons }}>
               <AccountCircleIcon />
             </SvgIcon>
-          </Box>
-          <Box className={classes.menuItemsContainer}>
+          </Link>
+          <Link to="/projects" className={classes.menuItemsContainer}>
             <Typography className={classes.menuItemHeader}>Projects</Typography>
             <SvgIcon classes={{ root: classes.sideBarIcons }}>
               <CodeIcon />
             </SvgIcon>
-          </Box>
-          <Box className={classes.menuItemsContainer}>
+          </Link>
+          <Link to="/contact" className={classes.menuItemsContainer}>
             <Typography className={classes.menuItemHeader}>
               Contact Me
             </Typography>
             <SvgIcon classes={{ root: classes.sideBarIcons }}>
               <EmailIcon />
             </SvgIcon>
-          </Box>
+          </Link>
         </Box>
       </>
     );
@@ -151,46 +152,57 @@ const SideNavbar = () => {
   return (
     <>
       <Box className={classes.sideBarContainer} component="section">
-        <Box
+        {/* <Box
           className={classes.sideBarItem}
           component={motion.div}
           whileHover={{ x: 50 }}
+        > */}
+        <Link
+          to="/"
+          className={classes.sideBarItem}
+          component={motion.a}
+          whileHover={{ x: 50 }}
         >
           <Typography className={classes.sideBarNames}>Home</Typography>
+
           <SvgIcon classes={{ root: classes.sideBarIcons }}>
             <HomeIcon />
           </SvgIcon>
-        </Box>
-        <Box
+        </Link>
+        {/* </Box> */}
+        <Link
+          to="/about"
           className={classes.sideBarItem}
-          component={motion.div}
+          component={motion.a}
           whileHover={{ x: 50 }}
         >
           <Typography className={classes.sideBarNames}>About</Typography>
           <SvgIcon classes={{ root: classes.sideBarIcons }}>
             <AccountCircleIcon />
           </SvgIcon>
-        </Box>
-        <Box
+        </Link>
+        <Link
+          to="/projects"
           className={classes.sideBarItem}
-          component={motion.div}
+          component={motion.a}
           whileHover={{ x: 70 }}
         >
           <Typography className={classes.sideBarNames}>Projects</Typography>
           <SvgIcon classes={{ root: classes.sideBarIcons }}>
             <CodeIcon />
           </SvgIcon>
-        </Box>
-        <Box
+        </Link>
+        <Link
+          to="/contact"
           className={classes.sideBarItem}
-          component={motion.div}
+          component={motion.a}
           whileHover={{ x: 90 }}
         >
           <Typography className={classes.sideBarNames}>Contact Me</Typography>
           <SvgIcon classes={{ root: classes.sideBarIcons }}>
             <EmailIcon />
           </SvgIcon>
-        </Box>
+        </Link>
       </Box>
     </>
   );

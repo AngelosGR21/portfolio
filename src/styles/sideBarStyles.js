@@ -8,6 +8,7 @@ const sideBarStyles = makeStyles((theme) => ({
     height: "50px",
     backgroundColor: colors.grey,
     position: "relative",
+    width: "100vw",
   },
   mobileMenu: {
     width: "50px",
@@ -21,7 +22,8 @@ const sideBarStyles = makeStyles((theme) => ({
   menuLines: {
     width: "70%",
     height: "2px",
-    backgroundColor: "black",
+    backgroundColor: colors.matteBlack,
+    borderRadius: "20px",
     "&:nth-of-type(2)": {
       margin: "4px 0",
     },
@@ -40,6 +42,7 @@ const sideBarStyles = makeStyles((theme) => ({
     zIndex: "2",
   },
   menuItemsContainer: {
+    textDecoration: "none",
     display: "flex",
     color: colors.white,
     backgroundColor: colors.matteBlack,
@@ -81,6 +84,7 @@ const sideBarStyles = makeStyles((theme) => ({
     justifyContent: "flex-end",
     paddingRight: "8px",
     cursor: "pointer",
+    textDecoration: "none",
   },
   sideBarNames: {
     color: colors.white,
