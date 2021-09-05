@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-import { Typography, Container, Button } from "@material-ui/core";
+import { Typography, Button, Box } from "@material-ui/core";
 
 import SideNavbar from "./components/SideNavbar";
 
@@ -16,30 +17,36 @@ const Home = () => {
   return (
     <>
       <SideNavbar></SideNavbar>
-      <Container maxWidth="lg" className={classes.homeContainer}>
-        <Container className={classes.textAndButtonContainer}>
-          <Container className={classes.textContainer}>
-            <Typography variant="h4" className={classes.homeHeader}>
+      <Box className={classes.mainContainer}>
+        <Box className={classes.textAndButtonsContainer}>
+          <Box className={classes.textContainer}>
+            <Typography className={classes.homeHeader}>
               Hi there, I'm
             </Typography>
-            <Typography variant="h3" className={classes.homeHeader}>
-              Angelos Grigoriu
+            <Typography className={classes.homeHeader}>
+              Angelos Grigoriu,
             </Typography>
-            <Typography variant="h4" className={classes.homeHeader}>
+            <Typography className={classes.homeHeader}>
               Web Developer.
             </Typography>
-          </Container>
-          <Container className={classes.buttonContainer}>
-            <Button variant="outlined" className={classes.buttons}>
-              About
-            </Button>
-            <Button variant="outlined" className={classes.buttons}>
-              Projects
-            </Button>
-          </Container>
-        </Container>
-        <img src={image} alt="home" className={classes.homeImage}></img>
-      </Container>
+          </Box>
+          <Box className={classes.buttonsContainer}>
+            <Link to="/about" className={classes.homeLinks}>
+              <Button variant="outlined" className={classes.buttons}>
+                About
+              </Button>
+            </Link>
+            <Link to="/projects" className={classes.homeLinks}>
+              <Button variant="outlined" className={classes.buttons}>
+                Projects
+              </Button>
+            </Link>
+          </Box>
+        </Box>
+        <Box className={classes.imageContainer}>
+          <img src={image} alt="home" className={classes.image}></img>
+        </Box>
+      </Box>
     </>
   );
 };
