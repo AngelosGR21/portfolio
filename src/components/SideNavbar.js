@@ -17,6 +17,8 @@ const SideNavbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
 
+  const [translate, setTranslate] = useState(0);
+
   const checkSize = () => {
     setWidth(window.innerWidth);
   };
@@ -152,16 +154,11 @@ const SideNavbar = () => {
   return (
     <>
       <Box className={classes.sideBarContainer} component="section">
-        {/* <Box
-          className={classes.sideBarItem}
-          component={motion.div}
-          whileHover={{ x: 50 }}
-        > */}
         <Link
           to="/"
           className={classes.sideBarItem}
           component={motion.a}
-          whileHover={{ x: 50 }}
+          whileHover={{ x: width >= 1920 ? 70 : 50 }}
         >
           <Typography className={classes.sideBarNames}>Home</Typography>
 
@@ -169,12 +166,11 @@ const SideNavbar = () => {
             <HomeIcon />
           </SvgIcon>
         </Link>
-        {/* </Box> */}
         <Link
           to="/about"
           className={classes.sideBarItem}
           component={motion.a}
-          whileHover={{ x: 50 }}
+          whileHover={{ x: width >= 1920 ? 75 : 50 }}
         >
           <Typography className={classes.sideBarNames}>About</Typography>
           <SvgIcon classes={{ root: classes.sideBarIcons }}>
@@ -185,7 +181,7 @@ const SideNavbar = () => {
           to="/projects"
           className={classes.sideBarItem}
           component={motion.a}
-          whileHover={{ x: 70 }}
+          whileHover={{ x: width >= 1920 ? 100 : 70 }}
         >
           <Typography className={classes.sideBarNames}>Projects</Typography>
           <SvgIcon classes={{ root: classes.sideBarIcons }}>
@@ -196,7 +192,7 @@ const SideNavbar = () => {
           to="/contact"
           className={classes.sideBarItem}
           component={motion.a}
-          whileHover={{ x: 90 }}
+          whileHover={{ x: width >= 1920 ? 140 : 90 }}
         >
           <Typography className={classes.sideBarNames}>Contact Me</Typography>
           <SvgIcon classes={{ root: classes.sideBarIcons }}>

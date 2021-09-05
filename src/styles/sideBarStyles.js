@@ -72,6 +72,11 @@ const sideBarStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     transform: "translateX(-88%)",
+    [theme.breakpoints.up("xl")]: {
+      top: "30%",
+      width: "400px",
+      height: "400px",
+    },
   },
   sideBarItem: {
     width: "100%",
@@ -85,14 +90,24 @@ const sideBarStyles = makeStyles((theme) => ({
     paddingRight: "8px",
     cursor: "pointer",
     textDecoration: "none",
+    [theme.breakpoints.up("xl")]: {
+      paddingRight: "12px",
+    },
   },
   sideBarNames: {
     color: colors.white,
     marginRight: "10px",
+    fontSize: "16px",
+    [theme.breakpoints.up("xl")]: {
+      fontSize: "24px",
+    },
   },
   sideBarIcons: {
     color: colors.orange,
-    fontSize: "1.8rem",
+    fontSize: "30px",
+    [theme.breakpoints.up("xl")]: {
+      fontSize: "40px",
+    },
   },
 }));
 
