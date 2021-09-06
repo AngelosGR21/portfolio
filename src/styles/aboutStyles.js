@@ -1,15 +1,24 @@
 import { makeStyles } from "@material-ui/core";
 import colors from "./colors";
 
-const iconFontSize = {
-  xs: "2rem",
-  sm: "2.8rem",
-  md: "3.1rem",
-  lg: "3.2rem",
-  xl: "6.5rem",
-};
+const iconFontSize = "2rem";
 
 const aboutStyles = makeStyles((theme) => ({
+  "@global": {
+    html: {
+      fontSize: "16px",
+      [theme.breakpoints.up("md")]: {
+        fontSize: "18px",
+      },
+      [theme.breakpoints.up("lg")]: {
+        fontSize: "20px",
+      },
+      [theme.breakpoints.up("xl")]: {
+        fontSize: "34px",
+      },
+    },
+  },
+
   //Main container
   aboutContainer: {
     display: "flex",
@@ -44,21 +53,14 @@ const aboutStyles = makeStyles((theme) => ({
     fontSize: "0.9rem",
     lineHeight: "1.5rem",
     [theme.breakpoints.up("sm")]: {
-      fontSize: "1.1rem",
       lineHeight: "1.8rem",
     },
     [theme.breakpoints.up("md")]: {
       lineHeight: "2.2rem",
-      fontSize: "1.4rem",
     },
     [theme.breakpoints.up("lg")]: {
-      lineHeight: "2.5rem",
-      letterSpacing: "2px",
-      fontSize: "1.6rem",
-    },
-    [theme.breakpoints.up("xl")]: {
-      lineHeight: "4rem",
-      fontSize: "3rem",
+      lineHeight: "2.0rem",
+      letterSpacing: "1px",
     },
   },
 
@@ -85,13 +87,6 @@ const aboutStyles = makeStyles((theme) => ({
     marginBottom: "1.3rem",
     [theme.breakpoints.up("md")]: {
       marginBottom: "2rem",
-      fontSize: "2.3rem",
-    },
-    [theme.breakpoints.up("lg")]: {
-      fontSize: "3rem",
-    },
-    [theme.breakpoints.up("xl")]: {
-      fontSize: "4rem",
     },
   },
   skillsIconsContainer: {
@@ -118,95 +113,26 @@ const aboutStyles = makeStyles((theme) => ({
   iconText: {
     color: colors.white,
     fontSize: "0.8rem",
-    [theme.breakpoints.up("md")]: {
-      fontSize: "1.1rem",
-    },
-    [theme.breakpoints.up("lg")]: {
-      fontSize: "1.4rem",
-    },
-    [theme.breakpoints.up("xl")]: {
-      fontSize: "1.8rem",
-    },
   },
   html: {
     color: "red",
-    fontSize: iconFontSize.xs,
-    [theme.breakpoints.up("sm")]: {
-      fontSize: iconFontSize.sm,
-    },
-    [theme.breakpoints.up("md")]: {
-      fontSize: iconFontSize.md,
-    },
-    [theme.breakpoints.up("lg")]: {
-      fontSize: iconFontSize.lg,
-    },
-    [theme.breakpoints.up("xl")]: {
-      fontSize: iconFontSize.xl,
-    },
+    fontSize: iconFontSize,
   },
   css: {
     color: "blue",
-    fontSize: iconFontSize.xs,
-    [theme.breakpoints.up("sm")]: {
-      fontSize: iconFontSize.sm,
-    },
-    [theme.breakpoints.up("md")]: {
-      fontSize: iconFontSize.md,
-    },
-    [theme.breakpoints.up("lg")]: {
-      fontSize: iconFontSize.lg,
-    },
-    [theme.breakpoints.up("xl")]: {
-      fontSize: iconFontSize.xl,
-    },
+    fontSize: iconFontSize,
   },
   js: {
     color: "yellow",
-    fontSize: iconFontSize.xs,
-    [theme.breakpoints.up("sm")]: {
-      fontSize: iconFontSize.sm,
-    },
-    [theme.breakpoints.up("md")]: {
-      fontSize: iconFontSize.md,
-    },
-    [theme.breakpoints.up("lg")]: {
-      fontSize: iconFontSize.lg,
-    },
-    [theme.breakpoints.up("xl")]: {
-      fontSize: iconFontSize.xl,
-    },
+    fontSize: iconFontSize,
   },
   react: {
     color: "#61dafb",
-    fontSize: iconFontSize.xs,
-    [theme.breakpoints.up("sm")]: {
-      fontSize: iconFontSize.sm,
-    },
-    [theme.breakpoints.up("md")]: {
-      fontSize: iconFontSize.md,
-    },
-    [theme.breakpoints.up("lg")]: {
-      fontSize: iconFontSize.lg,
-    },
-    [theme.breakpoints.up("xl")]: {
-      fontSize: iconFontSize.xl,
-    },
+    fontSize: iconFontSize,
   },
   git: {
     color: "#f14e32",
-    fontSize: iconFontSize.xs,
-    [theme.breakpoints.up("sm")]: {
-      fontSize: iconFontSize.sm,
-    },
-    [theme.breakpoints.up("md")]: {
-      fontSize: iconFontSize.md,
-    },
-    [theme.breakpoints.up("lg")]: {
-      fontSize: iconFontSize.lg,
-    },
-    [theme.breakpoints.up("xl")]: {
-      fontSize: iconFontSize.xl,
-    },
+    fontSize: iconFontSize,
   },
 
   //github linkedin container
@@ -218,15 +144,6 @@ const aboutStyles = makeStyles((theme) => ({
   githubLinkedInParagraph: {
     fontSize: "0.9rem",
     marginBottom: "2rem",
-    [theme.breakpoints.up("md")]: {
-      fontSize: "1.1rem",
-    },
-    [theme.breakpoints.up("lg")]: {
-      fontSize: "1.3rem",
-    },
-    [theme.breakpoints.up("xl")]: {
-      fontSize: "2.5rem",
-    },
   },
   arrowSymbol: {
     marginLeft: "5px",
@@ -245,9 +162,6 @@ const aboutStyles = makeStyles((theme) => ({
     "&:hover": {
       color: colors.orange,
     },
-    [theme.breakpoints.up("xl")]: {
-      fontSize: "5rem",
-    },
   },
   linkedIn: {
     color: "#0a66c2",
@@ -256,9 +170,6 @@ const aboutStyles = makeStyles((theme) => ({
     "&:hover": {
       color: colors.orange,
     },
-    [theme.breakpoints.up("xl")]: {
-      fontSize: "5rem",
-    },
   },
   resume: {
     color: "white",
@@ -266,9 +177,6 @@ const aboutStyles = makeStyles((theme) => ({
     transition: "all 0.4s",
     "&:hover": {
       color: colors.orange,
-    },
-    [theme.breakpoints.up("xl")]: {
-      fontSize: "5rem",
     },
   },
 }));

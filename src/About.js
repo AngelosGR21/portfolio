@@ -6,14 +6,7 @@ import globalStyles from "./styles/globalStyles";
 import aboutStyles from "./styles/aboutStyles";
 
 //Material ui imports
-import {
-  Icon,
-  Container,
-  Box,
-  Typography,
-  Link,
-  colors,
-} from "@material-ui/core";
+import { Icon, Container, Box, Typography, Link } from "@material-ui/core";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import DescriptionIcon from "@material-ui/icons/Description";
