@@ -11,8 +11,8 @@ import {
   Button,
   Link,
 } from "@material-ui/core";
-import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
-import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
+import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 import GitHubIcon from "@material-ui/icons/GitHub";
 
 import { motion, AnimatePresence } from "framer-motion";
@@ -71,15 +71,22 @@ const Projects = () => {
       <SideNavbar />
       <Container maxWidth="lg" className={classes.carouselContainer}>
         <Box className={classes.carousel}>
+          <Typography className={classes.name}>
+            {projects[index].name}
+          </Typography>
           <Box className={classes.arrowAndImageContainer}>
-            <div>
-              <IconButton onClick={backArrowHandle}>
-                <ArrowBackIosIcon
+            <Box>
+              <IconButton
+                onClick={backArrowHandle}
+                className={classes.arrowButtons}
+              >
+                <NavigateBeforeIcon
+                  fontSize="large"
                   className={`${classes.arrows}  ${classes.leftArrow} `}
-                ></ArrowBackIosIcon>
+                ></NavigateBeforeIcon>
               </IconButton>
-            </div>
-            <div className={classes.imageContainer}>
+            </Box>
+            <Box className={classes.imageContainer}>
               <AnimatePresence initial={false} custom={direction}>
                 <motion.img
                   alt={projects[index].name}
@@ -97,22 +104,30 @@ const Projects = () => {
                   }}
                 ></motion.img>
               </AnimatePresence>
-            </div>
-            <div>
-              <IconButton onClick={forwardArrowHandle}>
-                <ArrowForwardIosIcon
+            </Box>
+            <Box>
+              <IconButton
+                onClick={forwardArrowHandle}
+                className={classes.arrowButtons}
+              >
+                <NavigateNextIcon
+                  fontSize="large"
                   className={`${classes.arrows} ${classes.rightArrow}`}
-                ></ArrowForwardIosIcon>
+                ></NavigateNextIcon>
               </IconButton>
-            </div>
+            </Box>
           </Box>
-          <Box>
+          <Box className={classes.buttonsContainer}>
             <Link
               href={projects[index].github}
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button variant="contained" endIcon={<GitHubIcon />}>
+              <Button
+                className={classes.buttons}
+                variant="contained"
+                startIcon={<GitHubIcon />}
+              >
                 View Code
               </Button>
             </Link>
@@ -121,12 +136,23 @@ const Projects = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button variant="contained">View Live</Button>
+              <Button className={classes.buttons} variant="contained">
+                View Live
+              </Button>
             </Link>
           </Box>
-          <Typography className={classes.description}>
+          <Typography className={classes.descriptionTitle} variant="h5">
+            About
+          </Typography>
+          <Typography variant="body2" className={classes.description}>
             {projects[index].description}
           </Typography>
+          <Typography variant="body2" className={classes.toolsHeader}>
+            Built with
+          </Typography>
+          <Box className={classes.toolsUsed}>
+            <Typography>{projects[index].builtWith.join(", ")}</Typography>
+          </Box>
         </Box>
       </Container>
     </>
