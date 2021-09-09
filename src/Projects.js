@@ -69,7 +69,14 @@ const Projects = () => {
   return (
     <>
       <SideNavbar />
-      <Container maxWidth="lg" className={classes.carouselContainer}>
+      <Container
+        maxWidth="lg"
+        className={classes.carouselContainer}
+        component={motion.section}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
         <Box className={classes.carousel}>
           <Typography className={classes.name}>
             {projects[index].name}
@@ -119,6 +126,7 @@ const Projects = () => {
           </Box>
           <Box className={classes.buttonsContainer}>
             <Link
+              style={{ textDecoration: "none" }}
               href={projects[index].github}
               target="_blank"
               rel="noopener noreferrer"
@@ -132,6 +140,7 @@ const Projects = () => {
               </Button>
             </Link>
             <Link
+              style={{ textDecoration: "none" }}
               href={projects[index].liveWebsite}
               target="_blank"
               rel="noopener noreferrer"

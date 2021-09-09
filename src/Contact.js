@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import image from "./images/messageSent.svg";
+import errorImage from "./images/contactFormError.svg";
 import emailjs from "emailjs-com";
 import env from "react-dotenv";
 
@@ -15,8 +16,13 @@ const Contact = () => {
   globalStyles();
   const classes = contactStyles();
 
+  useEffect(() => {
+    document.title = "Angelos Grigoriu - Contact Page";
+  }, []);
+
   const [success, setSuccess] = useState(false);
   const [contactForm, setContactForm] = useState(true);
+  const [formError, setFormError] = useState(false);
 
   const [details, setDetails] = useState({
     first_name: "",
@@ -41,14 +47,20 @@ const Contact = () => {
           setSuccess(true);
         },
         (error) => {
-          console.log(error.text, "ERROR");
+          setContactForm(false);
+          setFormError(true);
         }
       );
   };
 
-  const showContact = () => {
-    setContactForm(true);
-    setSuccess(false);
+  const showContact = (error) => {
+    if (error) {
+      setContactForm(true);
+      setFormError(false);
+    } else {
+      setContactForm(true);
+      setSuccess(false);
+    }
   };
 
   return (
@@ -59,10 +71,10 @@ const Contact = () => {
           <Box
             className={classes.formContainer}
             component={motion.section}
-            initial={{ y: "-150vw" }}
+            initial={{ y: "-100vw" }}
             animate={{ y: 0 }}
-            exit={{ y: "150vw" }}
-            transition={{ duration: 2 }}
+            exit={{ y: "100vw" }}
+            transition={{ duration: 2, type: "spring" }}
           >
             <Typography variant="h4" className={classes.header}>
               Contact Form
@@ -163,9 +175,35 @@ const Contact = () => {
             <Button
               variant="contained"
               className={classes.backButton}
-              onClick={showContact}
+              onClick={() => showContact()}
             >
               Go back
+            </Button>
+          </Box>
+        )}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {formError && (
+          <Box
+            className={classes.errorContainer}
+            component={motion.section}
+            initial={{ y: "-100vw" }}
+            animate={{ y: 0 }}
+            exit={{ y: "100vw" }}
+            transition={{ duration: 2, type: "spring" }}
+          >
+            <img
+              alt="contact form error"
+              src={errorImage}
+              className={classes.errorFormImage}
+            ></img>
+            <Button
+              onClick={() => showContact("error")}
+              variant="contained"
+              className={classes.backButton}
+            >
+              Try again
             </Button>
           </Box>
         )}

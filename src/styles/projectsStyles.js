@@ -5,6 +5,9 @@ const projectsStyles = makeStyles((theme) => ({
   "@global": {
     html: {
       fontSize: "16px",
+      [theme.breakpoints.up("xl")]: {
+        fontSize: "22px",
+      },
     },
   },
 
@@ -36,6 +39,13 @@ const projectsStyles = makeStyles((theme) => ({
       width: "520px",
       padding: "20px",
     },
+    [theme.breakpoints.up("lg")]: {
+      width: "650px",
+      padding: "30px",
+    },
+    [theme.breakpoints.up("xl")]: {
+      width: "850px",
+    },
   },
 
   //header
@@ -43,7 +53,7 @@ const projectsStyles = makeStyles((theme) => ({
     textAlign: "center",
     color: colors.orange,
     textTransform: "uppercase",
-    fontSize: "1.2rem",
+    fontSize: "1.3rem",
     fontWeight: "700",
     letterSpacing: "1px",
     [theme.breakpoints.up("sm")]: {
@@ -54,6 +64,12 @@ const projectsStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.up("md")]: {
       marginBottom: "40px",
+    },
+    [theme.breakpoints.up("lg")]: {
+      marginBottom: "70px",
+    },
+    [theme.breakpoints.up("xl")]: {
+      marginBottom: "120px",
     },
   },
 
@@ -66,6 +82,15 @@ const projectsStyles = makeStyles((theme) => ({
     marginBottom: "10px",
     [theme.breakpoints.up(700)]: {
       marginBottom: "25px",
+    },
+    [theme.breakpoints.up("md")]: {
+      marginBottom: "40px",
+    },
+    [theme.breakpoints.up("lg")]: {
+      marginBottom: "60px",
+    },
+    [theme.breakpoints.up("xl")]: {
+      marginBottom: "120px",
     },
   },
   arrows: {
@@ -94,6 +119,12 @@ const projectsStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("md")]: {
       width: "300px",
     },
+    [theme.breakpoints.up("lg")]: {
+      width: "360px",
+    },
+    [theme.breakpoints.up("xl")]: {
+      width: "500px",
+    },
   },
 
   descriptionTitle: {
@@ -105,12 +136,21 @@ const projectsStyles = makeStyles((theme) => ({
   buttonsContainer: {
     display: "flex",
     justifyContent: "space-between",
-    [theme.breakpoints.up("sm")]: {},
+    [theme.breakpoints.up(450)]: {
+      justifyContent: "space-evenly",
+    },
   },
   buttons: {
     fontSize: "0.8rem",
     backgroundColor: colors.matteBlack,
     color: colors.orange,
+    "&:hover": {
+      backgroundColor: "black",
+      boxShadow: "0px 2px 10px black",
+    },
+    [theme.breakpoints.up("md")]: {
+      fontSize: "0.9rem",
+    },
   },
 
   description: {

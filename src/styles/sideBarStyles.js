@@ -41,6 +41,10 @@ const sideBarStyles = makeStyles((theme) => ({
     backgroundColor: colors.grey,
     zIndex: "2",
   },
+  menuItemHeader: {
+    fontFamily: "Kaisei Tokumin, serif",
+    fontWeight: "500",
+  },
   menuItemsContainer: {
     textDecoration: "none",
     display: "flex",
@@ -57,9 +61,6 @@ const sideBarStyles = makeStyles((theme) => ({
       width: "30%",
     },
   },
-  menuItemHeader: {
-    // marginRight: "20px",
-  },
 
   //Desktop View
 
@@ -72,6 +73,7 @@ const sideBarStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     transform: "translateX(-88%)",
+    zIndex: "1",
     [theme.breakpoints.up("xl")]: {
       top: "30%",
       width: "400px",
@@ -95,6 +97,7 @@ const sideBarStyles = makeStyles((theme) => ({
     },
   },
   sideBarNames: {
+    fontFamily: "Kaisei Tokumin, serif",
     color: colors.white,
     marginRight: "10px",
     fontSize: "16px",

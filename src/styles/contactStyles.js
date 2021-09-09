@@ -3,6 +3,11 @@ import { makeStyles } from "@material-ui/core";
 import colors from "./colors";
 
 const contactStyles = makeStyles((theme) => ({
+  "@global": {
+    html: {
+      fontSize: "16px",
+    },
+  },
   formContainer: {
     position: "absolute",
     display: "flex",
@@ -115,12 +120,16 @@ const contactStyles = makeStyles((theme) => ({
     "&:hover": {
       backgroundColor: "#545252",
     },
+    [theme.breakpoints.up("xl")]: {
+      fontSize: "1.4rem",
+    },
   },
 
+  //success message
   container: {
     position: "absolute",
     width: "100%",
-    height: "85%",
+    height: "100%",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
@@ -128,17 +137,73 @@ const contactStyles = makeStyles((theme) => ({
   },
   image: {
     width: "250px",
+    marginTop: "-70px",
     marginBottom: "1rem",
+    [theme.breakpoints.up("sm")]: {
+      width: "50%",
+      maxWidth: "350px",
+    },
+    [theme.breakpoints.up("md")]: {
+      maxWidth: "400px",
+    },
+    [theme.breakpoints.up("xl")]: {
+      maxWidth: "600px",
+    },
   },
   message: {
     color: "green",
     marginBottom: "1rem",
+    transition: "all 0.5s linear",
+    [theme.breakpoints.up("md")]: {
+      transform: "scale(1.1)",
+    },
+    [theme.breakpoints.up("xl")]: {
+      transform: "scale(1.4)",
+    },
   },
   backButton: {
     backgroundColor: colors.grey,
     color: colors.white,
+    transition: "all 0.5s linear",
     "&:hover": {
       backgroundColor: "#545252",
+    },
+    [theme.breakpoints.up("md")]: {
+      transform: "scale(1.2)",
+    },
+    [theme.breakpoints.up("xl")]: {
+      transform: "scale(1.4)",
+    },
+  },
+
+  //error message
+  errorContainer: {
+    position: "absolute",
+    width: "100%",
+    height: "100%",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  errorFormImage: {
+    marginTop: "-100px",
+    width: "350px",
+    marginBottom: "30px",
+    [theme.breakpoints.up(500)]: {
+      width: "70%",
+      maxWidth: "450px",
+    },
+    [theme.breakpoints.up("md")]: {
+      marginTop: "-50px",
+      maxWidth: "500px",
+    },
+    [theme.breakpoints.up("lg")]: {
+      maxWidth: "550px",
+    },
+    [theme.breakpoints.up("xl")]: {
+      width: "100%",
+      maxWidth: "900px",
     },
   },
 }));
