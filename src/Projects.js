@@ -75,7 +75,7 @@ const Projects = () => {
         component={motion.section}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 0.5 }}
       >
         <Box className={classes.carousel}>
           <Typography className={classes.name}>
@@ -107,7 +107,7 @@ const Projects = () => {
                   exit="exit"
                   transition={{
                     x: { type: "spring", stiffness: 40 },
-                    opacity: { duration: 1 },
+                    opacity: { duration: 0.5 },
                   }}
                 ></motion.img>
               </AnimatePresence>
@@ -159,8 +159,10 @@ const Projects = () => {
           <Typography variant="body2" className={classes.toolsHeader}>
             Built with
           </Typography>
-          <Box className={classes.toolsUsed}>
-            <Typography>{projects[index].builtWith.join(", ")}</Typography>
+          <Box>
+            <Typography className={classes.toolsUsed}>
+              {projects[index].builtWith.join(", ")}
+            </Typography>
           </Box>
         </Box>
       </Container>

@@ -69,7 +69,8 @@ const projectsStyles = makeStyles((theme) => ({
       marginBottom: "70px",
     },
     [theme.breakpoints.up("xl")]: {
-      marginBottom: "120px",
+      marginBottom: "7rem",
+      fontSize: "2rem",
     },
   },
 
@@ -90,7 +91,7 @@ const projectsStyles = makeStyles((theme) => ({
       marginBottom: "60px",
     },
     [theme.breakpoints.up("xl")]: {
-      marginBottom: "120px",
+      marginBottom: "7rem",
     },
   },
   arrows: {
@@ -98,6 +99,11 @@ const projectsStyles = makeStyles((theme) => ({
   },
   arrowButtons: {
     color: colors.orange,
+    "& .MuiSvgIcon-fontSizeLarge": {
+      [theme.breakpoints.up("xl")]: {
+        fontSize: "4rem",
+      },
+    },
   },
   imageContainer: {
     position: "relative",
@@ -123,7 +129,7 @@ const projectsStyles = makeStyles((theme) => ({
       width: "360px",
     },
     [theme.breakpoints.up("xl")]: {
-      width: "500px",
+      width: "600px",
     },
   },
 
@@ -131,6 +137,10 @@ const projectsStyles = makeStyles((theme) => ({
     color: colors.orange,
     fontWeight: "700",
     marginTop: "15px",
+    [theme.breakpoints.up("xl")]: {
+      fontSize: "1.8rem",
+      marginBottom: "10px",
+    },
   },
 
   buttonsContainer: {
@@ -151,21 +161,36 @@ const projectsStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("md")]: {
       fontSize: "0.9rem",
     },
+    [theme.breakpoints.up("xl")]: {
+      fontSize: "1.2rem",
+    },
   },
 
   description: {
     color: colors.white,
     lineHeight: "20px",
     letterSpacing: "1px",
+    [theme.breakpoints.up("xl")]: {
+      fontSize: "1.5rem",
+      lineHeight: "45px",
+    },
   },
 
   toolsHeader: {
     fontWeight: "700",
     color: colors.orange,
     marginTop: "15px",
+    [theme.breakpoints.up("xl")]: {
+      fontSize: "1.8rem",
+      marginBottom: "10px",
+    },
   },
   toolsUsed: {
     color: colors.white,
+    [theme.breakpoints.up("xl")]: {
+      fontSize: "1.4rem",
+      lineHeight: "45px",
+    },
   },
 }));
 
