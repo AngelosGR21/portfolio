@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 import { Typography, Button, Box } from "@material-ui/core";
 
@@ -13,6 +14,10 @@ import image from "./images/HomeSVG2.svg";
 const Home = () => {
   globalStyles();
   const classes = homeStyles();
+
+  useEffect(() => {
+    document.title = "Angelos Grigoriu - Homepage";
+  }, []);
 
   return (
     <>

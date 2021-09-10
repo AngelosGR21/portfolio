@@ -67,6 +67,8 @@ const homeStyles = makeStyles((theme) => ({
     },
   },
   homeHeader: {
+    fontFamily: "Kaisei Tokumin, serif",
+    fontWeight: "700",
     color: colors.white,
     textTransform: "uppercase",
     fontSize: "1.4rem",
@@ -94,6 +96,7 @@ const homeStyles = makeStyles((theme) => ({
     textAlign: "left",
   },
   buttons: {
+    fontFamily: "Kaisei Tokumin, serif",
     color: colors.orange,
     borderColor: colors.orange,
     fontSize: "0.7rem",

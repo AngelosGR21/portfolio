@@ -1,23 +1,28 @@
+import { useEffect } from "react";
+
 //components import
 import SideNavbar from "./components/SideNavbar";
-
+import resume from "./images/Resume.pdf";
 //styles import
 import globalStyles from "./styles/globalStyles";
 import aboutStyles from "./styles/aboutStyles";
 
 //Material ui imports
 import { Icon, Container, Box, Typography, Link } from "@material-ui/core";
-import GitHubIcon from "@material-ui/icons/GitHub";
-import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import DescriptionIcon from "@material-ui/icons/Description";
-
+import {
+  GitHub as GitHubIcon,
+  LinkedIn as LinkedInIcon,
+  Description as DescriptionIcon,
+} from "@material-ui/icons";
 //import motion
 import { motion } from "framer-motion";
 
 const About = () => {
   globalStyles();
   const classes = aboutStyles();
-
+  useEffect(() => {
+    document.title = "Angelos Grigoriu - About";
+  }, []);
   return (
     <>
       <SideNavbar />
@@ -93,7 +98,7 @@ const About = () => {
             >
               <LinkedInIcon className={classes.linkedIn} />
             </Link>
-            <Link href="*" target="_blank" rel="noopener noreferrer">
+            <Link href={resume} target="_blank" rel="noopener noreferrer">
               <DescriptionIcon className={classes.resume}></DescriptionIcon>
             </Link>
           </Box>
