@@ -10,6 +10,8 @@ import globalStyles from "./styles/globalStyles";
 import contactStyles from "./styles/contactStyles";
 
 import { TextField, Button, Box, Typography } from "@material-ui/core";
+import { StylesProvider } from "@material-ui/styles";
+
 import { motion, AnimatePresence } from "framer-motion";
 
 const Contact = () => {
@@ -66,148 +68,154 @@ const Contact = () => {
   return (
     <>
       <SideNavbar />
-      <AnimatePresence>
-        {contactForm && (
-          <Box
-            className={classes.formContainer}
-            component={motion.section}
-            initial={{ y: "-100vw" }}
-            animate={{ y: 0 }}
-            exit={{ y: "100vw" }}
-            transition={{ duration: 2, type: "spring" }}
-          >
-            <Typography variant="h4" className={classes.header}>
-              Contact Form
-            </Typography>
-            <form className={classes.form} onSubmit={sendEmail}>
-              <Box className={classes.namesContainer}>
+      <StylesProvider injectFirst>
+        <AnimatePresence>
+          {contactForm && (
+            <Box
+              className={classes.formContainer}
+              component={motion.section}
+              initial={{ y: "-100vw" }}
+              animate={{ y: 0 }}
+              exit={{ y: "100vw" }}
+              transition={{ duration: 2, type: "spring" }}
+            >
+              <Typography variant="h4" className={classes.header}>
+                Contact Form
+              </Typography>
+              <form className={classes.form} onSubmit={sendEmail}>
+                <Box className={classes.namesContainer}>
+                  <TextField
+                    autoComplete="off"
+                    name="first_name"
+                    autoFocus={true}
+                    value={details.first_name}
+                    onChange={(e) =>
+                      setDetails({ ...details, first_name: e.target.value })
+                    }
+                    label="First Name"
+                    required
+                    variant="outlined"
+                    className={`${classes.borderChange} ${classes.firstName}`}
+                    InputLabelProps={{
+                      className: classes.inputLabel,
+                    }}
+                  ></TextField>
+                  <TextField
+                    name="last_name"
+                    value={details.last_name}
+                    onChange={(e) =>
+                      setDetails({ ...details, last_name: e.target.value })
+                    }
+                    label="Last Name"
+                    required
+                    variant="outlined"
+                    className={`${classes.borderChange} ${classes.lastName}`}
+                    InputLabelProps={{
+                      className: classes.inputLabel,
+                    }}
+                  ></TextField>
+                </Box>
                 <TextField
-                  autoComplete="off"
-                  name="first_name"
-                  autoFocus={true}
-                  value={details.first_name}
+                  name="email"
+                  value={details.email}
                   onChange={(e) =>
-                    setDetails({ ...details, first_name: e.target.value })
+                    setDetails({ ...details, email: e.target.value })
                   }
-                  label="First Name"
+                  label="Email"
                   required
                   variant="outlined"
-                  className={`${classes.borderChange} ${classes.firstName}`}
+                  className={`${classes.emailInput} ${classes.borderChange}`}
                   InputLabelProps={{
                     className: classes.inputLabel,
                   }}
                 ></TextField>
+
                 <TextField
-                  name="last_name"
-                  value={details.last_name}
+                  name="message"
+                  value={details.message}
                   onChange={(e) =>
-                    setDetails({ ...details, last_name: e.target.value })
+                    setDetails({ ...details, message: e.target.value })
                   }
-                  label="Last Name"
+                  label="Message"
                   required
                   variant="outlined"
-                  className={`${classes.borderChange} ${classes.lastName}`}
+                  multiline
+                  minRows={2}
+                  maxRows={5}
+                  className={classes.borderChange}
                   InputLabelProps={{
                     className: classes.inputLabel,
                   }}
                 ></TextField>
-              </Box>
-              <TextField
-                name="email"
-                value={details.email}
-                onChange={(e) =>
-                  setDetails({ ...details, email: e.target.value })
-                }
-                label="Email"
-                required
-                variant="outlined"
-                className={`${classes.emailInput} ${classes.borderChange}`}
-                InputLabelProps={{
-                  className: classes.inputLabel,
-                }}
-              ></TextField>
+                <Box className={classes.buttonContainer}>
+                  <Button
+                    variant="contained"
+                    type="submit"
+                    className={classes.button}
+                  >
+                    Send
+                  </Button>
+                </Box>
+              </form>
+            </Box>
+          )}
+        </AnimatePresence>
 
-              <TextField
-                name="message"
-                value={details.message}
-                onChange={(e) =>
-                  setDetails({ ...details, message: e.target.value })
-                }
-                label="Message"
-                required
-                variant="outlined"
-                multiline
-                minRows={2}
-                maxRows={5}
-                className={classes.borderChange}
-                InputLabelProps={{
-                  className: classes.inputLabel,
-                }}
-              ></TextField>
-              <Box className={classes.buttonContainer}>
-                <Button
-                  variant="contained"
-                  type="submit"
-                  className={classes.button}
-                >
-                  Send
-                </Button>
-              </Box>
-            </form>
-          </Box>
-        )}
-      </AnimatePresence>
-
-      <AnimatePresence>
-        {success && (
-          <Box
-            className={classes.container}
-            component={motion.section}
-            initial={{ y: "-150vw" }}
-            animate={{ y: 0 }}
-            exit={{ y: "150vw" }}
-            transition={{ duration: 2 }}
-          >
-            <img alt="message sent" src={image} className={classes.image}></img>
-            <Typography className={classes.message} variant="h4">
-              Message sent
-            </Typography>
-            <Button
-              variant="contained"
-              className={classes.backButton}
-              onClick={() => showContact()}
+        <AnimatePresence>
+          {success && (
+            <Box
+              className={classes.container}
+              component={motion.section}
+              initial={{ y: "-150vw" }}
+              animate={{ y: 0 }}
+              exit={{ y: "150vw" }}
+              transition={{ duration: 2 }}
             >
-              Go back
-            </Button>
-          </Box>
-        )}
-      </AnimatePresence>
+              <img
+                alt="message sent"
+                src={image}
+                className={classes.image}
+              ></img>
+              <Typography className={classes.message} variant="h4">
+                Message sent
+              </Typography>
+              <Button
+                variant="contained"
+                className={classes.backButton}
+                onClick={() => showContact()}
+              >
+                Go back
+              </Button>
+            </Box>
+          )}
+        </AnimatePresence>
 
-      <AnimatePresence>
-        {formError && (
-          <Box
-            className={classes.errorContainer}
-            component={motion.section}
-            initial={{ y: "-100vw" }}
-            animate={{ y: 0 }}
-            exit={{ y: "100vw" }}
-            transition={{ duration: 2, type: "spring" }}
-          >
-            <img
-              alt="contact form error"
-              src={errorImage}
-              className={classes.errorFormImage}
-            ></img>
-            <Button
-              onClick={() => showContact("error")}
-              variant="contained"
-              className={classes.backButton}
+        <AnimatePresence>
+          {formError && (
+            <Box
+              className={classes.errorContainer}
+              component={motion.section}
+              initial={{ y: "-100vw" }}
+              animate={{ y: 0 }}
+              exit={{ y: "100vw" }}
+              transition={{ duration: 2, type: "spring" }}
             >
-              Try again
-            </Button>
-          </Box>
-        )}
-      </AnimatePresence>
+              <img
+                alt="contact form error"
+                src={errorImage}
+                className={classes.errorFormImage}
+              ></img>
+              <Button
+                onClick={() => showContact("error")}
+                variant="contained"
+                className={classes.backButton}
+              >
+                Try again
+              </Button>
+            </Box>
+          )}
+        </AnimatePresence>
+      </StylesProvider>
     </>
   );
 };
