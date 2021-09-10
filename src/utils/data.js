@@ -19,7 +19,7 @@ const data = [
     description:
       "The portfolio is the first project i started implementing Framer-Motion and styling more in-depth Material-UI components. ",
     image: portfolio,
-    builtWith: ["React", "Material-UI", "Framer Motion"],
+    builtWith: ["React", "Material-UI", "Framer Motion", "EmailJS"],
   },
   {
     name: "Sword Shop",
