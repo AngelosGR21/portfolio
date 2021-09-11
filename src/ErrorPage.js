@@ -15,7 +15,7 @@ const ErrorPage = () => {
     <>
       <SideNavbar />
       <Box className={classes.container}>
-        <img src={image} className={classes.image}></img>
+        <img alt="spaceship" src={image} className={classes.image}></img>
         <Typography className={classes.header}>Page not found!</Typography>
         <Link to="/" className={classes.link}>
           <Button variant="outlined" className={classes.button}>
