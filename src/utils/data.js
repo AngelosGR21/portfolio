@@ -15,7 +15,7 @@ const data = [
   {
     name: "Portfolio",
     github: "https://github.com/AngelosGR21/portfolio",
-    liveWebsite: "https://angelosgr21.github.io/portfolio",
+    liveWebsite: "https://agrigoriu.netlify.app/",
     description:
       "The portfolio is the first project i started implementing Framer-Motion and styling more in-depth Material-UI components. ",
     image: portfolio,
