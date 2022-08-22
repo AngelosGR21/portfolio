@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import image from "./images/messageSent.svg";
 import errorImage from "./images/contactFormError.svg";
-import emailjs from "emailjs-com";
+// import emailjs from "emailjs";
 import env from "react-dotenv";
 
 import SideNavbar from "./components/SideNavbar";
@@ -9,8 +9,8 @@ import SideNavbar from "./components/SideNavbar";
 import globalStyles from "./styles/globalStyles";
 import contactStyles from "./styles/contactStyles";
 
-import { TextField, Button, Box, Typography } from "@material-ui/core";
-import { StylesProvider } from "@material-ui/styles";
+import { TextField, Button, Box, Typography } from "@mui/material";
+// import { StylesProvider } from "@material-ui/styles";
 
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -35,24 +35,24 @@ const Contact = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-    emailjs
-      .sendForm(
-        `${env.SERVICE_ID}`,
-        `${env.TEMPLATE_ID}`,
-        e.target,
-        `${env.USER_ID}`
-      )
-      .then(
-        () => {
-          setDetails({ name: "", email: "", message: "" });
-          setContactForm(false);
-          setSuccess(true);
-        },
-        (error) => {
-          setContactForm(false);
-          setFormError(true);
-        }
-      );
+    // emailjs
+    //   .sendForm(
+    //     `${env.SERVICE_ID}`,
+    //     `${env.TEMPLATE_ID}`,
+    //     e.target,
+    //     `${env.USER_ID}`
+    //   )
+    //   .then(
+    //     () => {
+    //       setDetails({ name: "", email: "", message: "" });
+    //       setContactForm(false);
+    //       setSuccess(true);
+    //     },
+    //     (error) => {
+    //       setContactForm(false);
+    //       setFormError(true);
+    //     }
+    //   );
   };
 
   const showContact = (error) => {
@@ -68,7 +68,7 @@ const Contact = () => {
   return (
     <>
       <SideNavbar />
-      <StylesProvider injectFirst>
+      {/* <StylesProvider injectFirst> */}
         <AnimatePresence>
           {contactForm && (
             <Box
@@ -215,7 +215,7 @@ const Contact = () => {
             </Box>
           )}
         </AnimatePresence>
-      </StylesProvider>
+      {/* </StylesProvider> */}
     </>
   );
 };

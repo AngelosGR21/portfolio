@@ -2,7 +2,7 @@ import SideNavbar from "./components/SideNavbar";
 import image from "./images/ErrorAlienSpaceship.svg";
 
 import { Link } from "react-router-dom";
-import { Box, Typography, Button } from "@material-ui/core";
+import { Box, Typography, Button } from "@mui/material";
 
 import globalStyles from "./styles/globalStyles";
 import errorPageStyles from "./styles/errorPageStyles";

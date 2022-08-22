@@ -2,12 +2,12 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import { motion } from "framer-motion";
-import { Box, SvgIcon, Typography, AppBar } from "@material-ui/core";
-import CodeIcon from "@material-ui/icons/Code";
-import EmailIcon from "@material-ui/icons/Email";
-import HomeIcon from "@material-ui/icons/Home";
+import { Box, SvgIcon, Typography, AppBar } from "@mui/material";
+import CodeIcon from '@mui/icons-material/Code';
+import EmailIcon from "@mui/icons-material/Email";
+import HomeIcon from "@mui/icons-material/Home";
 
-import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 //styles
 import sideBarStyles from "../styles/sideBarStyles";
 const SideNavbar = () => {

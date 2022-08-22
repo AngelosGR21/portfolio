@@ -10,10 +10,10 @@ import {
   Typography,
   Button,
   Link,
-} from "@material-ui/core";
-import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
-import NavigateNextIcon from "@material-ui/icons/NavigateNext";
-import GitHubIcon from "@material-ui/icons/GitHub";
+} from "@mui/material";
+import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
+import NavigateNextIcon from "@mui/icons-material/NavigateNext";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 import { motion, AnimatePresence } from "framer-motion";
 

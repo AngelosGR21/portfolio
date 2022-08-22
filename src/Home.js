@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 
-import { Typography, Button, Box } from "@material-ui/core";
+import { Typography, Button, Box } from "@mui/material";
 
 import SideNavbar from "./components/SideNavbar";
 
@@ -21,7 +21,8 @@ const Home = () => {
 
   return (
     <>
-      <SideNavbar></SideNavbar>
+      <h1>Hello</h1>
+      <SideNavbar/>
       <Box className={classes.mainContainer}>
         <Box className={classes.textAndButtonsContainer}>
           <Box className={classes.textContainer}>

@@ -8,13 +8,13 @@ import globalStyles from "./styles/globalStyles";
 import aboutStyles from "./styles/aboutStyles";
 
 //Material ui imports
-import { Icon, Container, Box, Typography, Link } from "@material-ui/core";
+import { Icon, Container, Box, Typography, Link } from "@mui/material";
 import {
   GitHub as GitHubIcon,
   LinkedIn as LinkedInIcon,
   Description as DescriptionIcon,
-} from "@material-ui/icons";
-import { StylesProvider } from "@material-ui/styles";
+} from "@mui/icons-material";
+// import { StylesProvider } from "@mui/styles";
 //import motion
 import { motion } from "framer-motion";
 
@@ -27,7 +27,7 @@ const About = () => {
   return (
     <>
       <SideNavbar />
-      <StylesProvider injectFirst>
+      {/* <StylesProvider injectFirst> */}
         <Container className={classes.aboutContainer} maxWidth="lg">
           <Box
             className={classes.aboutParagraphContainer}
@@ -106,7 +106,7 @@ const About = () => {
             </Box>
           </Box>
         </Container>
-      </StylesProvider>
+      {/* </StylesProvider> */}
     </>
   );
 };
