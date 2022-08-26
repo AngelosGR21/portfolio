@@ -1,6 +1,6 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { Routes, Route } from "react-router-dom";
+import ReactDOM from "react-dom/client";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 //Components
 import Home from "./Home";
@@ -9,15 +9,18 @@ import Projects from "./Projects";
 import Contact from "./Contact";
 import ErrorPage from "./ErrorPage";
 
-ReactDOM.render(
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
   <React.StrictMode>
-    <Routes>
-        <Route path="/" element={<Home />}/>
-        <Route path="/about" element={<About />}/>
-        <Route path="/projects" element={<Projects />}/>
-        <Route path="/contact" element={<Contact />}/>
-        <Route path="*" element={<ErrorPage />}/>
-    </Routes>
-  </React.StrictMode>,
-  document.getElementById("root")
+    <BrowserRouter>
+      <Routes>
+          <Route path="/" element={<Home />}/>
+          <Route path="/about" element={<About />}/>
+          <Route path="/projects" element={<Projects />}/>
+          <Route path="/contact" element={<Contact />}/>
+          <Route path="*" element={<ErrorPage />}/>
+      </Routes>
+    </BrowserRouter>
+  </React.StrictMode>
 );
