@@ -8,7 +8,7 @@ import HomeIcon from "@mui/icons-material/Home";
 
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 //styles
-import "../styles/SideNavbar.css";
+import "../styles/Navbar.css";
 
 const Navbar = () => {
   const navigate = useNavigate();
