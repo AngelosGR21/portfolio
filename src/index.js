@@ -3,11 +3,11 @@ import ReactDOM from "react-dom/client";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 //Components
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 import About from "./About";
 import Projects from "./Projects";
 import Contact from "./Contact";
-import ErrorPage from "./ErrorPage";
+import Error from "./pages/Error/Error";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -19,7 +19,7 @@ root.render(
           <Route path="/about" element={<About />}/>
           <Route path="/projects" element={<Projects />}/>
           <Route path="/contact" element={<Contact />}/>
-          <Route path="*" element={<ErrorPage />}/>
+          <Route path="*" element={<Error />}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
