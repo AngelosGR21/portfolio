@@ -6,7 +6,6 @@ import HeaderAndButtonsContainer from "./HeaderAndButtonsContainer";
 import { useEffect } from "react";
 import { Box } from "@mui/material";
 
-import "../../styles/global.css";
 import "./Home.css";
 
 
