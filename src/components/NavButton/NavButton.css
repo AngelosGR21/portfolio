@@ -1,0 +1,14 @@
+.shared-links {
+    text-decoration: none;
+}
+
+.shared-links:nth-of-type(2) {
+    margin-left: clamp(80px, 10vw, 100px);
+}
+
+.shared-buttons {
+    color: var(--orange) !important;
+    border-color: var(--orange) !important;
+    width: 100%;
+    font-size: clamp(0.89rem, 2vw, 1.1rem) !important;
+}
