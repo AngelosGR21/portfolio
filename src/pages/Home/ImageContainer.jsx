@@ -1,4 +1,4 @@
-import image from "../../images/HomeSVG2.svg";
+import image from "../../assets/HomeSVG2.svg";
 import { Box } from "@mui/material";
 
 const ImageContainer = () => {
