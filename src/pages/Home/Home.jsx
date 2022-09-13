@@ -3,17 +3,12 @@ import Navbar from "../../components/Navbar/Navbar"
 import ImageContainer from "./ImageContainer";
 import HeaderAndButtonsContainer from "./HeaderAndButtonsContainer";
 
-import { useEffect } from "react";
 import { Box } from "@mui/material";
 
 import "./Home.css";
 
 
 const Home = () => {
-
-  useEffect(() => {
-    document.title = "Home";
-  }, []);
 
   return (
     <>
